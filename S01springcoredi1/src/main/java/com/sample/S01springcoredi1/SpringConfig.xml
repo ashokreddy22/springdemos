@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean name="emp" class="com.sample.S01springcoredi1.Employee"
+		p:id="5262" p:name="ashok reddy" />
+
+	<bean name="college" class="com.sample.S01springcoredi1.course">
+		<property name="name" value="Btech" />
+		<property name="departments">
+			<list>
+				<value>ece</value>
+				<value>cse</value>
+				<value>cse</value>
+			</list>
+		</property>
+	</bean>
+	<bean name="cars" class="com.sample.S01springcoredi1.CarDelear">
+		<property name="dealername" value="reddy Motors" />
+		<property name="models">
+			<set>
+				<value>Rolls Royce</value>
+				<value>Honda</value>
+				<value>Toyota</value>
+				<value>Honda</value>
+			</set>
+		</property>
+	</bean>
+	<bean name="products" class="com.sample.S01springcoredi1.Products"
+		p:id="101">
+		<property name="products">
+			<map>
+				<entry key="1" value="redmi" />
+				<entry key="2" value="Iphone" />
+				<entry key="3" value="bluetooth" />
+				<entry key="4" value="Iphone" />
+
+			</map>
+		</property>
+	</bean>
+
+<bean name="items1" class="com.sample.S01springcoredi1.Item"
+    p:id="101" p:name="sugar" p:price="125.5" p:quantity="3.5"/>
+    <bean name="carts" class="com.sample.S01springcoredi1.ShoppingCart">
+    <property name="items" ref="items1"></property>
+    </bean>
+</beans>
